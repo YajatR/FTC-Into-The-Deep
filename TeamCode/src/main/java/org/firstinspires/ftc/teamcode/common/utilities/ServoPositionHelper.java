@@ -42,9 +42,9 @@ public class ServoPositionHelper extends LinearOpMode {
     @Override
     public void runOpMode() {
         telemetry.addData("Status", "Initializing Completed");
-        servo = hardwareMap.get(Servo.class, "servo");
+        servo = hardwareMap.get(Servo.class, "claw");
 
-        servoPosition = 0.5;
+        servoPosition = 0.9;
         servo.setPosition(servoPosition);
         telemetry.addData("Servo Set Position: ",servo.getPosition());
         telemetry.update();
@@ -58,7 +58,8 @@ public class ServoPositionHelper extends LinearOpMode {
             boolean currentGamepadY = gamepad1.y;
             boolean currentGamepadA = gamepad1.a;
             boolean currentGamepadUp = gamepad1.dpad_up;
-            boolean currentGamepadDown = gamepad1.dpad_down;
+            boolean currentGamepadDown = gamepad1.
+                    dpad_down;
 
             // Check to see if the user is clicking the Y(△) button on the gamepad.
             if (currentGamepadY && !previousGamepadY){
